@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final ArrayList<String> questions = formList();
 
         final Button startButton = (Button) findViewById(R.id.start);
         startButton.setOnClickListener(new Button.OnClickListener() {
@@ -31,23 +32,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*final Button addButton = (Button) findViewById(R.id.add);
+        nextButton.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) // клик на кнопку
+            {
+                //questions.add();
+            }
+        });*/
+
 
     }
 
-    private final String[] quesList = {"Name three sphere things","Name three clother on you","Name smth else"};
-
-    public String getQuestion(String[] questions){
-        int i = 0;
-        i = (int) Math.random()*questions.length;
-        return questions[i];
+    public ArrayList<String> formList(){
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("Name three sphere things");
+        list.add("Name three clother on you");
+        list.add("Name three friends");
+        list.add("Remember three Oscar masters");
+        return list;
     }
 
-    public String[] addQuestion (String[] questions, String question) {
-        String[] res = new String[questions.length+1];
-        for (int i=0; i < questions.length; i++) {
-            res[i] = questions[i];
-        }
-        res[questions.length] = question;
-        return res;
-    }
 }
