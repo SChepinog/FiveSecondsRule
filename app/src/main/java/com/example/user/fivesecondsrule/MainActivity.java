@@ -34,21 +34,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private final String[] questions = {"Name three sphere things","Name three clother on you","Name smth else"};
+    private final String[] quesList = {"Name three sphere things","Name three clother on you","Name smth else"};
 
-    public final ArrayList<String> createList() {
-        ArrayList<String> list = new ArrayList<String>();
-        return list;
-    }
-
-    public final ArrayList<String> addQuestion(ArrayList<String> list, String string){
-        list.add(string);
-        return list;
-    }
-
-    public String getQuestion(){
+    public String getQuestion(String[] questions){
         int i = 0;
         i = (int) Math.random()*questions.length;
         return questions[i];
+    }
+
+    public String[] addQuestion (String[] questions, String question) {
+        String[] res = new String[questions.length+1];
+        for (int i=0; i < questions.length; i++) {
+            res[i] = questions[i];
+        }
+        res[questions.length] = question;
+        return res;
     }
 }
