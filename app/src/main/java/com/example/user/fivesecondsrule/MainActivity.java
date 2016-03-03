@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +34,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public final String[] questions = {"Name three sphere things","Name three clother on you","Name smth else"};
+    private final String[] questions = {"Name three sphere things","Name three clother on you","Name smth else"};
+
+    public final ArrayList<String> createList() {
+        ArrayList<String> list = new ArrayList<String>();
+        return list;
+    }
+
+    public final ArrayList<String> addQuestion(ArrayList<String> list, String string){
+        list.add(string);
+        return list;
+    }
+
     public String getQuestion(){
         int i = 0;
         i = (int) Math.random()*questions.length;
