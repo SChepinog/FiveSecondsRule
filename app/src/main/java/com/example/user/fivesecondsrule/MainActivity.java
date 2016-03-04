@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) // клик на кнопку
             {
-                final TextView tTemper = (TextView) findViewById(R.id.textView);
+                final TextView tQuestion = (TextView) findViewById(R.id.textView);
                 String ques = "";
                 ques = getQuestion(questions);
-                tTemper.setText(ques); // отображение температуры
+                tQuestion.setText(ques);
             }
         });
 
