@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) // клик на кнопку
             {
-                //RefreshTemper();
+                //startTimer();
             }
         });
 
@@ -28,28 +28,29 @@ public class MainActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) // клик на кнопку
             {
-                //RefreshTemper();
+                getQuestion(questions);
             }
         });
 
-        /*final Button addButton = (Button) findViewById(R.id.add);
-        nextButton.setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View v) // клик на кнопку
-            {
-                //questions.add();
-            }
-        });*/
+
 
 
     }
 
+    //public ArrayList<String> questions = formList();
+
     public ArrayList<String> formList(){
-        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<>();
         list.add("Name three sphere things");
         list.add("Name three clother on you");
         list.add("Name three friends");
         list.add("Remember three Oscar masters");
         return list;
+    }
+
+    public String getQuestion(ArrayList<String> list){
+        int i = (int) (Math.random()*list.size());
+        return list.get(i);
     }
 
 }
